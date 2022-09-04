@@ -1,51 +1,42 @@
 /**
- * Represents a book.
+ * Represents todosData.
+ * todoItem._id 존재할 경우 특정 _id에 해당하는 todo 조회 / 없으면 전체데이터 조회
+ * @property {todoItem[]} todosData - all todos data
+ * @param {string} todoItem._id
+ */
+function getTodos() {}
+
+/**
+ * Represents todoItem.
  * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * @param {string} _id
+ * @param {string} body
+ * @param {boolean} completed
+ * @param {string} category
+ * @param {string[]} tags
  */
-function Book(title, author) {}
+function createTodoItem(body, category, tags) {}
 
 /**
- * Both of these will link to the bar function.
- * @see {@link bar}
- * @see bar
+ * Represents update todoItem.
+ * _id 제외한 모든 컨텐츠 수정
+ * category, tags 삭제 가능
+ * @param {string} body
+ * @param {boolean} completed
+ * @param {string} category
+ * @param {string[]} tags
  */
-function foo() {}
-
-// Use the inline {@link} tag to include a link within a free-form description.
-/**
- * @see {@link foo} for further information.
- * @see {@link http://github.com|GitHub}
- */
-function bar() {}
+function updateTodoItem(body, category, tags) {}
 
 /**
- * Generic dairy product.
- * @constructor
+ * Represents delete todoItem.
+ * _id로 삭제
+ * @param {string} todoItem._id
  */
-function DairyProduct() {}
+function deleteTodoItem(_id) {}
 
 /**
- * Check whether the dairy product is solid at room temperature.
- * @abstract
- * @return {boolean}
+ * Represents delete all todos.
+ * @augments todosData
  */
-DairyProduct.prototype.isSolid = function () {
-	throw new Error('must be implemented by subclass!');
-};
-
-/**
- * Cool, refreshing milk.
- * @constructor
- * @augments DairyProduct
- */
-function Milk() {}
-
-/**
- * Check whether milk is solid at room temperature.
- * @return {boolean} Always returns false.
- */
-Milk.prototype.isSolid = function () {
-	return false;
-};
+function deleteTodosAll() {}
